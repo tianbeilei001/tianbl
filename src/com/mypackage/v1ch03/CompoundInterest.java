@@ -1,27 +1,27 @@
-package com.tianbl.v1ch03;
+package com.mypackage.v1ch03;
 
 /**
+ * 描述:
  * This program shows how to store tabular data in a 2D array.
- * @version 1.40 2004-02-10
- * @author Cay Horstmann
+ *
+ * @author TianBeilei
+ * @version V1.0
+ * @create 2018年09月28日  10:46
  */
-public class CompoundInterest
-{
-    private static final double START_RATE = 10;
-    private static final int N_RATES = 6;
-    private static final int N_YEARS = 10;
-    public static void main(String[] args)
-    {
+public class CompoundInterest {
 
-
+    public static void main(String[] args) {
+        final double startRate = 10;
+        final int NRATES = 6;
+        final int NYEARS = 10;
 
         // set interest rates to 10 . . . 15%
-        double[] interestRate = new double[N_RATES];
+        double[] interestRate = new double[NRATES];
         for (int j = 0; j < interestRate.length; j++) {
-            interestRate[j] = (START_RATE + j) / 100.0;
+            interestRate[j] = (startRate + j) / 100.0;
         }
 
-        double[][] balances = new double[N_YEARS][N_RATES];
+        double[][] balances = new double[NYEARS][NRATES];
 
         // set initial balances to 10000
         for (int j = 0; j < balances[0].length; j++) {
@@ -29,8 +29,8 @@ public class CompoundInterest
         }
 
         // compute interest for future years
-        int i=1;
-        while(i < balances.length){
+        for (int i = 1; i < balances.length; i++)
+        {
             for (int j = 0; j < balances[i].length; j++)
             {
                 // get last year's balances from previous row
@@ -42,7 +42,6 @@ public class CompoundInterest
                 // compute this year's balances
                 balances[i][j] = oldBalance + interest;
             }
-            i++;
         }
 
         // print one row of interest rates

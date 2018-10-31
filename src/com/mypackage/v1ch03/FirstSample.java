@@ -17,5 +17,7 @@ public class FirstSample {
         System.out.println(y);
         double z = Math.pow(4,4);
         System.out.println(z);
+        System.out.println("-----------tianbeilei@sina.cn-----------z值=" + z + "," + "当前类=FirstSample.main()");
     }
+
 }
